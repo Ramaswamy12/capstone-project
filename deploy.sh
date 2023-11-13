@@ -1,11 +1,8 @@
 #!/bin/bash
+# Log in to Docker Hub (replace with your actual Docker Hub credentials)
 docker login -u "ramaswamy12" -p "dckr_pat_W8WCZwTlaOGcNsEniO_3nRGe0Dc"
 # Check the Git branch
 if [[ $GIT_BRANCH == "origin/dev" ]]; then
-    # Build your project
-    ./build.sh
-    # Log in to Docker Hub (replace with your actual Docker Hub credentials)
-   :wq
    # Tag the image
     docker tag myreactimg ramaswamy12/dev
 
@@ -14,7 +11,6 @@ if [[ $GIT_BRANCH == "origin/dev" ]]; then
 
 elif [[ $GIT_BRANCH == "origin/master" ]]; then
     # Build your project
-    ./build.sh
      docker tag myreactimg ramaswamy12/prod
       docker push ramaswamy12/prod
 else
