@@ -12,7 +12,7 @@ if [[ $GIT_BRANCH == "origin/dev" ]]; then
 elif [[ $GIT_BRANCH == "origin/master" ]]; then
     # Build your project
      docker tag myreactimg ramaswamy12/prod
-      docker push ramaswamy12/prod
+     docker push ramaswamy12/prod
 else
   echo "code not deployed"
 fi
