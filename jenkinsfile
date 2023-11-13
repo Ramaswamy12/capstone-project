@@ -2,6 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Execute the build.sh script
+                    sh "chmod +x build.sh"
+                    sh './build.sh'
+                }
+            }
+        }
+
         stage('Deploy') {
             steps {
                 script {
